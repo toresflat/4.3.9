@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "fbd03eb7-9706-4647-8643-5baa497579e0",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60137601",
+    "_collection_link": "https://go.postman.co/collection/60137601-fbd03eb7-9706-4647-8643-5baa497579e0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Registration",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"login\": \"taras_test\",\n  \"password\": \"mypassword123\",\n  \"surname\": \"Ivanov\",\n  \"name\": \"Taras\",\n  \"role\": \"JOURNALIST\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://94.198.50.185:8031/api/users/registration",
+          "protocol": "http",
+          "host": [
+            "94",
+            "198",
+            "50",
+            "185"
+          ],
+          "port": "8031",
+          "path": [
+            "api",
+            "users",
+            "registration"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"login\": \"taras_test\",\n  \"password\": \"mypassword123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://94.198.50.185:8031/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "94",
+            "198",
+            "50",
+            "185"
+          ],
+          "port": "8031",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Authorization",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0t0m}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://94.198.50.185:8031/api/users/current/get",
+          "protocol": "http",
+          "host": [
+            "94",
+            "198",
+            "50",
+            "185"
+          ],
+          "port": "8031",
+          "path": [
+            "api",
+            "users",
+            "current",
+            "get"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_09uf",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0t0m",
+      "secret": true
+    }
+  ]
+}
